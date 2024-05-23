@@ -13,8 +13,20 @@ import { LayoutContext } from './context/layoutcontext';
 import { PrimeReactContext } from 'primereact/api';
 import { ChildContainerProps, LayoutState, AppTopbarRef } from '@/types';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { LayoutProvider } from '../layout/context/layoutcontext';
+import { PrimeReactProvider } from 'primereact/api';
 
-const Layout = ({ children }: ChildContainerProps) => {
+const Layout = ({ children }: ChildContainerProps) => (
+    <PrimeReactProvider value={{ripple: true}}>
+        <LayoutProvider>
+            <LayoutContent>
+                {children}
+            </LayoutContent>
+        </LayoutProvider>
+    </PrimeReactProvider>
+)
+
+const LayoutContent = ({ children }: ChildContainerProps) => {
     const { layoutConfig, layoutState, setLayoutState } = useContext(LayoutContext);
     const { setRipple } = useContext(PrimeReactContext);
     const topbarRef = useRef<AppTopbarRef>(null);
@@ -133,7 +145,7 @@ const Layout = ({ children }: ChildContainerProps) => {
                     <div className="layout-main">{children}</div>
                     <AppFooter />
                 </div>
-                <AppConfig />
+       
                 <div className="layout-mask"></div>
             </div>
         </React.Fragment>

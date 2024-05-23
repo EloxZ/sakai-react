@@ -8,9 +8,9 @@ const AppFooter = () => {
 
     return (
         <div className="layout-footer">
-            <img src={`/layout/images/logo-${layoutConfig.colorScheme === 'light' ? 'dark' : 'white'}.svg`} alt="Logo" height="20" className="mr-2" />
+            <img src={`/layout/images/drenting-logo.png`} alt="Logo" height="20" className="mr-2" />
             by
-            <span className="font-medium ml-2">PrimeReact</span>
+            <a href='https://drenting.com' target='_blank' className="font-medium ml-2">Drenting</a>
         </div>
     );
 };

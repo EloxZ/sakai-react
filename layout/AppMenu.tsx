@@ -12,6 +12,13 @@ const AppMenu = () => {
 
     const model: AppMenuItem[] = [
         {
+            label: 'En desarrollo',
+            items: [
+                { label: 'Ofertas', icon: 'pi pi-fw pi-list', to: '/admin/offers' },
+                { label: 'Modelos', icon: 'pi pi-fw pi-car', to: '/admin/models' },
+            ]
+        },
+        {
             label: 'Home',
             items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' }]
         },
@@ -39,8 +46,7 @@ const AppMenu = () => {
         {
             label: 'Prime Blocks',
             items: [
-                { label: 'Free Blocks', icon: 'pi pi-fw pi-eye', to: '/blocks', badge: 'NEW' },
-                { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://blocks.primereact.org', target: '_blank' }
+                { label: 'Free Blocks', icon: 'pi pi-fw pi-eye', to: '/blocks', badge: 'NEW' }
             ]
         },
         {
